@@ -1,0 +1,20 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 11" width="24" height="11">
+	<title>Day 1022 Log In UI Design</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #306bf3;stroke-linecap:round;stroke-linejoin:round;stroke-width: 2 } 
+	</style>
+	<g id="Day 1022 Log In UI Design">
+		<g id="Group 15">
+			<g id="Group 16">
+				<g id="Group 4 Copy 3">
+					<g id="git-commit">
+						<path id="Oval" class="shp0" d="M12 9.25C14.21 9.25 16 7.46 16 5.25C16 3.04 14.21 1.25 12 1.25C9.79 1.25 8 3.04 8 5.25C8 7.46 9.79 9.25 12 9.25Z" />
+						<path id="Path" class="shp0" d="M1.05 5.25L7 5.25" />
+						<path id="Path" class="shp0" d="M17.01 5.25L22.96 5.25" />
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
