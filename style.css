@@ -8,8 +8,14 @@
   /* Colores de tipografias */
   --black-color: #000000;
   --light-blue: #306bf3;
+  /* Padding */
+  --padding-main-box: 4rem;
+  --padding-main-box-responsive: 2rem;
+  --padding-border-main: 1.5rem;
+  --padding-border-responsive: 1rem;
   /* Otros */
   --gray-solid-color: #dae1f5;
+  --hr-vertical: 4px;
 }
 
 *,
@@ -47,7 +53,8 @@ input {
   border: none;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -56,14 +63,14 @@ a {
   color: var(--light-blue);
 }
 
-.main-container input[type="text"] {
+.main-container input {
   font-size: 1rem;
 }
 
 .border-main {
   border-radius: 0.3rem;
   background-color: var(--gray-bg-color);
-  padding: 1.4rem;
+  padding: var(--padding-border-main);
 }
 
 .main-container {
@@ -71,6 +78,7 @@ a {
   display: flex;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
   /* Estetica */
   border-radius: 0.2rem;
   background-color: var(--white-bg-color);
@@ -83,7 +91,8 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 4rem;
+  min-width: 22rem;
+  padding: var(--padding-main-box);
 }
 
 .box-left {
@@ -111,8 +120,6 @@ a {
   padding: 0.4rem 2rem 0.4rem 2rem;
   /* Estetica */
   border-radius: 0.2rem;
-  background-color: #ffffff;
-  border: 1.5px solid var(--gray-solid-color);
 }
 
 .main-container .box-left input[type="submit"] {
@@ -124,17 +131,36 @@ a {
   margin: 1.5rem 0 0.5rem 0;
 }
 
-.box-left input[type="text"],
-.box-left input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 5px;
+.form-question {
+  display: grid;
+  align-content: center;
+  align-items: stretch;
+  grid-template-columns: 1fr;
 }
 
-.box-left input[type="text"] {
-border: 1px solid #dae1f5;
-background-color: #ffffff;
+.box-left .form-question button {
+  grid-area: 2 / 2 / 3 / 3;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: .5rem;
+}
+
+.form-question input {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.main-container .box-left .password-type input {
+  border-radius: 5px 0 0 5px;
+}
+
+.box-left input,
+.box-left button {
+  border: 1.5px solid var(--gray-solid-color);
+  border-radius: 5px;
+  background-color: var(--white-bg-color);
+}
+.box-left input {
+  padding: 0.8rem;
 }
 
 .box-left form {
@@ -150,7 +176,6 @@ background-color: #ffffff;
 
 .form-question label {
   margin-bottom: 0.5rem;
-  display: block;
 }
 
 .trivial-form-questions {
@@ -176,7 +201,7 @@ background-color: #ffffff;
 }
 
 .hr-vertical {
-  border-left: 4px solid var(--gray-solid-color);
+  border-left: var(--hr-vertical) solid var(--gray-solid-color);
 }
 
 .main-container .box-right {
@@ -198,4 +223,24 @@ background-color: #ffffff;
 
 .box-right h2 {
   margin: 0;
+}
+
+@media only screen and (max-width: 844px) {
+  body {
+    align-items: flex-start;
+    background-color: var(--gray-bg-color);
+  }
+  .main-container > section {
+    padding: var(--padding-main-box-responsive);
+  }
+  .hr-vertical {
+    width: calc(100% - calc(var(--padding-main-box-responsive) * 2));
+    height: var(--hr-vertical);
+    background-color: var(--gray-solid-color);
+  }
+  .border-main {
+    border-radius: 0.3rem;
+    background-color: var(--gray-bg-color);
+    padding: var(--padding-border-responsive);
+  }
 }
