@@ -35,7 +35,7 @@
         <p class="method-separator">or</p>
 
         <!-- Inicio del Formulario -->
-        <form>
+        <form action="/action_page.php" method="post">
 
           <!-- Email -->
           <div class="form-question">
@@ -46,25 +46,35 @@
           <!-- Constraseña -->
           <div class="form-question password-type">
             <label for="input-password">Password</label>
-            <input type="password" id="input-password" name="input-password" placeholder="Password">
-            <button type='button'>
-              <img src="img/show-password.svg" alt="">
-            </button>
+            <div class="password-container">
+              <input type="password" id="input-password" name="input-password" placeholder="Password">
+              <button type='button'>
+                <span class="show-password"></span>
+              </button>
+            </div>
           </div>
 
           <!-- De nuevo la constraseña -->
           <div class="form-question password-type">
             <label for="input-again-password">Again Password</label>
-            <input type="password" id="input-again-password" name="input-again-password" placeholder="Password">
-            <button type='button'>
-              <img src="img/show-password.svg" alt="">
-            </button>
+            <div class="password-container">
+              <input type="password" id="input-password" name="input-password" placeholder="Password">
+              <button type='button'>
+                <span class="show-password"></span>
+              </button>
+            </div>
           </div>
 
           <!-- Recibir notificacion al Email -->
-          <div class="trivial-form-questions">
+          <div class="checkbox-type">
+            <div>
             <input type="checkbox" id="input-newsletters" name="input-newsletters" value="true">
             <label for="input-newsletters"> Receive newsletters in your email</label>
+          </div>
+          <div>
+            <input type="checkbox" id="input-privacy-policies" name="input-privacy-policies" value="true">
+            <label for="input-privacy-policies"> I agree to the <a href="#" class="account-questions-links">Terms & Conditions</a> and <a href="#" class="account-questions-links">Privacy Policy</a>.</label>
+          </div>
           </div>
 
           <!-- Enviar formulario -->

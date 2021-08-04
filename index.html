@@ -35,7 +35,7 @@
         <p class="method-separator">or</p>
 
         <!-- Inicio del Formulario -->
-        <form>
+        <form action="/action_page.php" method="post">
 
           <!-- Email -->
           <div class="form-question">
@@ -46,14 +46,16 @@
           <!-- Constraseña -->
           <div class="form-question password-type">
             <label for="input-password">Password</label>
+            <div class="password-container">
             <input type="password" id="input-password" name="input-password" placeholder="Password">
             <button type='button'>
-            <img src="img/show-password.svg" alt="">
+              <span class="show-password"></span>
             </button>
+          </div>
           </div>
 
           <!-- Recordar contraseña -->
-          <div class="trivial-form-questions">
+          <div class="checkbox-type">
             <input type="checkbox" id="input-remember-me" name="input-remember-me" value="true">
             <label for="input-remember-me"> Remember me</label>
 
@@ -64,7 +66,7 @@
           <!-- Enviar formulario -->
           <input type="submit" value="Log in">
 
-          <!-- Crear cuenta / Iniciar sesión / Recuperar Cuenta ww -->
+          <!-- Crear cuenta / Iniciar sesión / Recuperar Cuenta -->
           <p class="account-questions-links">Don’t have an account? <a href="/register.html">Sign up</a></p>
 
           <!-- Fin del Formulario -->

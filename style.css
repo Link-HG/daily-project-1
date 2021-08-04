@@ -63,6 +63,11 @@ a {
   color: var(--light-blue);
 }
 
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #306bf34f;
+}
+
 .main-container input {
   font-size: 1rem;
 }
@@ -71,6 +76,9 @@ a {
   border-radius: 0.3rem;
   background-color: var(--gray-bg-color);
   padding: var(--padding-border-main);
+
+  /* Arregla problema de desbordamiento de flex */
+  margin: auto;
 }
 
 .main-container {
@@ -92,6 +100,7 @@ a {
   align-items: center;
   flex-direction: column;
   min-width: 22rem;
+  max-width: 40rem;
   padding: var(--padding-main-box);
 }
 
@@ -127,30 +136,68 @@ a {
   color: var(--white-bg-color);
 }
 
+.main-container .box-left input[type="submit"]:disabled {
+  background-color: #10182fcc;
+  cursor: context-menu;
+}
+
 .method-separator {
   margin: 1.5rem 0 0.5rem 0;
 }
 
 .form-question {
-  display: grid;
+  display: flex;
   align-content: center;
   align-items: stretch;
-  grid-template-columns: 1fr;
+  flex-direction: column;
 }
 
 .box-left .form-question button {
-  grid-area: 2 / 2 / 3 / 3;
   border-left: none;
   border-radius: 0 5px 5px 0;
   padding: .5rem;
-}
 
-.form-question input {
-  grid-area: 2 / 1 / 3 / 2;
+  flex: 0;
 }
 
 .main-container .box-left .password-type input {
   border-radius: 5px 0 0 5px;
+
+  border-right: none;
+  flex: 1;
+}
+
+.password-container > *:focus  {
+  box-shadow: none;
+}
+
+.password-container > button:focus  {
+  background-color: #306bf317;
+}
+
+.password-container:focus-within {
+  box-shadow: 0 0 0 2px #306bf34f;
+  border-radius: 5px;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.show-password, .hide-password {
+  padding: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.show-password {
+  background-image: url(/img/show-password.svg);
+}
+
+.hide-password {
+  background-image: url(/img/hide-password.svg);
 }
 
 .box-left input,
@@ -178,21 +225,12 @@ a {
   margin-bottom: 0.5rem;
 }
 
-.trivial-form-questions {
-  /* Flex */
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  /* Dimenciones */
+.checkbox-type > a {
+  float: right;
+}
+
+.checkbox-type {
   margin: 1rem 0 1rem 0;
-}
-
-.trivial-form-questions input[type="checkbox"] {
-  margin-right: 0.2rem;
-}
-
-.trivial-form-questions a {
-  margin-left: auto;
 }
 
 .account-questions-links {
@@ -227,7 +265,7 @@ a {
 
 @media only screen and (max-width: 844px) {
   body {
-    align-items: flex-start;
+  
     background-color: var(--gray-bg-color);
   }
   .main-container > section {

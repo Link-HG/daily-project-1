@@ -1,16 +1,16 @@
-const inputFormTogglePassword = document.querySelectorAll(".form-question button");
+const togglePasswordInput = document.querySelectorAll(".form-question button");
 
-inputFormTogglePassword.forEach((element) => {
+togglePasswordInput.forEach((element) => {
   element.addEventListener("click", function () {
-      const img = this.querySelector("img");
-      const input = this.parentElement.querySelector("input");
-
+    // Selectores
+    const img = this.querySelector("span");
+    const input = this.parentElement.querySelector("input")
       if (input.type === "password") {
         input.type = "text";
-        img.src = "img/hide-password.svg";
+        img.className = "hide-password";
       } else {
         input.type = "password";
-        img.src = "img/show-password.svg";
+        img.className = "show-password";
       }
     },
     false
