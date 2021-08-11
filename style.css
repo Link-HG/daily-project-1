@@ -76,6 +76,10 @@ a {
   background-color: var(--gray-bg-color);
   padding: var(--padding-border-main);
 
+  width: 100%;
+  max-width: 72rem;
+  min-width: 320px;
+
   /* Arregla problema de desbordamiento de flex */
   margin: auto;
 }
@@ -98,9 +102,6 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  /* max-width: 40rem; */
-  width: 35rem;
 
   padding: var(--padding-main-box);
 }
@@ -270,7 +271,6 @@ a {
   }
   .main-container > section {
     padding: var(--padding-main-box-responsive);
-    width: auto;
   }
   .hr-vertical {
     width: calc(100% - calc(var(--padding-main-box-responsive) * 2));
